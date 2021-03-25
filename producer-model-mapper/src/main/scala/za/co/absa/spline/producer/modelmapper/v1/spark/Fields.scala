@@ -20,6 +20,7 @@ object Fields {
 
   object Extra {
     val AppName = "appName"
+    val DurationNs = "durationNs"
   }
 
 }
