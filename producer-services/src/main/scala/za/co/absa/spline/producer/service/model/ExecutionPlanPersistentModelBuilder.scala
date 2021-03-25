@@ -75,7 +75,7 @@ class ExecutionPlanPersistentModelBuilder private(
 
   def build(): ExecutionPlanPersistentModel = {
     val pmExecutionPlan = pm.ExecutionPlan(
-      name = ep.name,
+      appName = ep.appName,
       _key = ep.id.toString,
       systemInfo = ep.systemInfo.toJsonAs[Map[String, Any]],
       agentInfo = ep.agentInfo.map(_.toJsonAs[Map[String, Any]]).orNull,

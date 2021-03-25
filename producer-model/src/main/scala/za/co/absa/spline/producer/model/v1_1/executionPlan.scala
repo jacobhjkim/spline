@@ -20,7 +20,7 @@ import java.util.UUID
 
 case class ExecutionPlan(
   id: UUID = UUID.randomUUID(),
-  name: Option[ExecutionPlan.Name],
+  appName: Option[ExecutionPlan.AppName],
 
   operations: Operations,
   attributes: Seq[Attribute] = Nil,
@@ -41,7 +41,7 @@ case class ExecutionPlan(
 }
 
 object ExecutionPlan {
-  type Name = String
+  type AppName = String
   type DataSourceUri = String
 }
 

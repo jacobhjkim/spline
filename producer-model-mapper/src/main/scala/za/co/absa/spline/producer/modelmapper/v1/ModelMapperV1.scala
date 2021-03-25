@@ -43,7 +43,7 @@ object ModelMapperV1 extends ModelMapper {
     val maybeExpressionConverter = epccf.expressionConverter
     val maybeOutputConverter = epccf.outputConverter
     val objectConverter = epccf.objectConverter
-    val planNameExtractor = epccf.planNameExtractor
+    val planNameExtractor = epccf.appNameExtractor
 
     val operationConverter = new OperationConverter(objectConverter, maybeOutputConverter) with CachingConverter
 
@@ -63,7 +63,7 @@ object ModelMapperV1 extends ModelMapper {
 
     ExecutionPlan(
       id = plan1.id,
-      name = planNameExtractor(plan1),
+      appName = planNameExtractor(plan1),
       operations = operations,
       attributes = attributes,
       expressions = maybeExpressions,

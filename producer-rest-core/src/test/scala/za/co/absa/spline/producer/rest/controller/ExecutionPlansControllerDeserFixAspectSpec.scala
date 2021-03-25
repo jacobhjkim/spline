@@ -118,7 +118,7 @@ object ExecutionPlansControllerDeserFixAspectSpec {
 
     ExecutionPlan(
       id = planId,
-      name = None,
+      appName = None,
       operations = Operations(
         write = WriteOperation(
           id = "1",

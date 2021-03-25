@@ -100,7 +100,7 @@ object DataSource {
   * from the inputs to the output.
   */
 case class ExecutionPlan(
-  name: Option[ExecutionPlan.Name],
+  appName: Option[ExecutionPlan.AppName],
   systemInfo: Map[String, Any],
   agentInfo: Map[String, Any],
   extra: Map[String, Any],
@@ -108,7 +108,7 @@ case class ExecutionPlan(
 ) extends Vertex with RootEntity
 
 object ExecutionPlan {
-  type Name = String
+  type AppName = String
 }
 
 /**

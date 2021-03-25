@@ -83,7 +83,7 @@ class ExecutionProducerRepositoryImpl @Autowired()(db: ArangoDatabaseAsync) exte
          |    RETURN {
          |        "${ExecutionPlanDetails.ExecutionPlanId}" : ep._key,
          |        "${ExecutionPlanDetails.FrameworkName}" : CONCAT(ep.systemInfo.name, " ", ep.systemInfo.version),
-         |        "${ExecutionPlanDetails.ApplicationName}" : ep.name,
+         |        "${ExecutionPlanDetails.ApplicationName}" : ep.appName,
          |        "${ExecutionPlanDetails.DataSourceUri}" : writeOp.outputSource,
          |        "${ExecutionPlanDetails.DataSourceType}" : writeOp.extra.destinationType,
          |        "${ExecutionPlanDetails.Append}" : writeOp.append

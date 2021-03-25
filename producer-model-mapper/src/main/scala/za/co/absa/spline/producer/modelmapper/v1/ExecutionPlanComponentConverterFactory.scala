@@ -24,7 +24,7 @@ import za.co.absa.spline.producer.{model => v1}
 import scala.PartialFunction.condOpt
 
 trait ExecutionPlanComponentConverterFactory {
-  def planNameExtractor: v1.ExecutionPlan => Option[v1_1.ExecutionPlan.Name]
+  def appNameExtractor: v1.ExecutionPlan => Option[v1_1.ExecutionPlan.AppName]
   def attributeConverter: Option[CachingConverter {type To = v1_1.Attribute}]
   def expressionConverter: Option[CachingConverter {type To = v1_1.ExpressionLike}]
   def outputConverter: Option[OperationOutputConverter]
@@ -34,7 +34,7 @@ trait ExecutionPlanComponentConverterFactory {
 object ExecutionPlanComponentConverterFactory {
 
   object EmptyFactory extends ExecutionPlanComponentConverterFactory {
-    override def planNameExtractor: v1.ExecutionPlan => Option[v1_1.ExecutionPlan.Name] = _ => None
+    override def appNameExtractor: v1.ExecutionPlan => Option[v1_1.ExecutionPlan.AppName] = _ => None
 
     override def attributeConverter: Option[AttributeConverter with CachingConverter] = None
 
